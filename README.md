@@ -1,8 +1,8 @@
-#  :link: Shorty
+#  :link: Shortener
 
 > A self-hosted URL shortening service built using Flask & Mysql. 
 
-![Demo image of Shorty](./desc/hero_final.gif)
+![Demo image of Shortener](./desc/hero_final.gif)
 
 
 ## :tada: Surprise : Click Analytics 
@@ -17,9 +17,9 @@ Tracking for Operating system and platform used to access the link is available.
 Clone or download this repository.
 
 ```
-git clone https://github.com/PadamSethia/shorty.git
+git clone https://github.com/PadamSethia/shortener.git
 
-cd shorty/
+cd shortener/
 
 python ./app.py
 ```
@@ -109,7 +109,7 @@ This takes care of the concurrency issue.
 
 # Running for production
 
-This section outlines how to setup and run shorty on web servers.
+This section outlines how to setup and run shortener on web servers.
 In this case I'll consider AWS EC2 instance.
 
 * Set up the EC2 instance.
@@ -118,9 +118,9 @@ In this case I'll consider AWS EC2 instance.
 
 * Clone this git repository.
 
-Change the Host in `app.run()` to `0.0.0.0` , for both `shorty_api.py` and `app.py`
+Change the Host in `app.run()` to `0.0.0.0` , for both `shortener_api.py` and `app.py`
 
-Now if you run `python ./app.py` , shorty should run under the server IP as `<server host>:<port>`
+Now if you run `python ./app.py` , shortener should run under the server IP as `<server host>:<port>`
 By default the `port` is `5000` , make sure to open the port before running the app.
 
 ## Creating Script for running the app
@@ -144,17 +144,17 @@ If it doesn't work install from distro repo
 `sudo yum install uwsgi & nginx`
 
 
-## Using uWSGI to run app.py and shorty_api.py
+## Using uWSGI to run app.py and shortener_api.py
 
 The uwsgi file is already setup in this repo , just change the <user> to your user name .
 For eg , 
 
 
-`wsgi-file = /home/<user>/shorty/app.py`
+`wsgi-file = /home/<user>/shortener/app.py`
 
 Just change the `<user>` to your sepecified user name , for me it would be
 
-`wsgi-file = /home/padam/shorty/app.py`
+`wsgi-file = /home/padam/shortener/app.py`
 
 So update the `uwsgi_app` and `uwsgi_api` files.
 
