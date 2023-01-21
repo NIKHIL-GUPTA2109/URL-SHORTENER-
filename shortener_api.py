@@ -4,10 +4,10 @@ import config
 from check_encode import random_token , url_check
 from display_list import list_data
 
-shorty_api = Flask(__name__)
-shorty_api.config.from_object('config')
+shortener_api = Flask(__name__)
+shortener_api.config.from_object('config')
 
-shorty_host = config.domain
+shortener_host = config.domain
 
 # MySQL configurations
 
@@ -18,7 +18,7 @@ db = config.db
 
 # api Block
 
-@shorty_api.route('/api/v1/shorten' , methods= ['POST'])
+@shortener_api.route('/api/v1/shorten' , methods= ['POST'])
 def create_short_url():	
 	'''
 		Takes long _url as url, custom string(opt), 
